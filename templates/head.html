@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="/style.css">
 </head>
 <body>
+{% comment %}
 
 <header class="header">
     <a href="/" class="logo{% if settings.logo == blank %} logo-image{% endif %}">{% if settings.logo == blank %}<img src="{{ settings.logo }}">{% else %}{{ settings.siteName }}{% endif %}</a>
@@ -19,9 +20,11 @@
     </div>
     {% endif %}
 </header>
+
 <section class="banner">
-        <div class="banner__content">
-            <h1 class="page-title">{{ title }}</h1>
-            {% if about %}<p>{{ about }}</p>{% endif %}
-        </div>
-    </section>
+    <div class="banner__content">
+        <h1 class="page-title">{{ title }}</h1>
+        {% if about %}<p>{{ about }}</p>{% endif %}
+    </div>
+</section> 
+{% endcomment %}

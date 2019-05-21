@@ -1,5 +1,27 @@
 {% include head.html %}
 
+<main class="homepage">
+{{ settings.logo | contents }}
+<div class="nav"><a href="/posts">Meetup Notes</a></div>
+{% assign meetupSlice = meetups | lookup: "Web Workers" | slice: "1"  %}
+        {% for meetup in meetupSlice %}
+            <h1 class="meetup-title"><a href="{{meetup.link }}" title="Link to {{ meetup.name }}">{{ meetup.name }}</a></h1>
+            <div class="meetup-date">
+                <div class="date-icon">{{ "/images/calendar.svg" | contents }}</div>
+                <div class="date-month">{{ meetup.local_date | date: "%B" }}</div>
+                <div class="date-day">{{ meetup.local_date | date: "%d" }}</div>                  
+            </div>
+            <div class="meetup-details">
+                <div class="time">{{ meetup.local_date | date: "%I:%M %p" }}</div>
+                <div class="venue">{{ meetup.venue.name }} | {{ meetup.venue.address_1 }}</div>
+            </div>
+            <div class="meetup-description">{{ meetup.description | safe }}</div>
+
+            
+        {% endfor %}
+</main>
+
+{% comment %}
 <section class="meetups">
     <section class="upcoming">
         <h2>Upcoming Meetups</h2>
@@ -37,7 +59,7 @@
         {% endif %} 
     </section>
 </section>
-
+{% endcomment %}
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
     <script>
         if (window.netlifyIdentity) {
