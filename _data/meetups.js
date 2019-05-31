@@ -7,6 +7,7 @@ module.exports = async function() {
     return axios.get(url)
         .then(function (response) {
             let data = response.data;
+            console.log(data);
             if (stringMatch.length > 0) {
                 data = data.filter(meetup => {
                     return meetup.name.includes(stringMatch);

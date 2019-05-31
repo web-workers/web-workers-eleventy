@@ -168,7 +168,7 @@ body {
     min-height: 90vh;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: 1fr minmax(50px, min-content) 1fr 1fr;
+    grid-template-rows: minmax(50px, min-content) 1fr 1fr;
     grid-gap: 1rem;
     grid-template-areas: "logo . . . nav"
                          "title title title title ."
@@ -218,8 +218,9 @@ body {
 }
 .meetup-description {
     grid-area: description;
-    max-width: 65ch;
     color: var(--foreground-color);
+    column-width: 300px;
+
 }
 .meetup-date {
     grid-area: date;
@@ -230,6 +231,7 @@ body {
     display: grid;
     grid-template-columns: minmax(25px, 40px) minmax(100px, 1fr);
     grid-gap: 1rem;
+    align-content: center;
     margin: 0;
 }
 @media (max-width: 850px) {

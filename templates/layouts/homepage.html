@@ -12,7 +12,7 @@
                 <div class="date-day">{{ meetup.local_date | date: "%d" }}</div>                  
             </div>
             <div class="meetup-details">
-                <div class="time">{{ meetup.local_date | date: "%I:%M %p" }}</div>
+                <div class="time">{{ meetup.local_date | date: "%l:%M %p" }}</div>
                 <div class="venue">{{ meetup.venue.name }} | {{ meetup.venue.address_1 }}</div>
             </div>
             <div class="meetup-description">{{ meetup.description | safe }}</div>
