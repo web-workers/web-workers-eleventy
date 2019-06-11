@@ -10,6 +10,7 @@ module.exports = function(config) {
     config.addFilter("slice", require("./filters/slice.js"));
     config.addFilter("lookup", require("./filters/lookup.js"));
     config.addFilter("contents", require("./filters/contents.js"));
+    config.addFilter("military", require("./filters/military.js"));
     config.addPassthroughCopy("images");
     config.addPassthroughCopy("./admin");
 

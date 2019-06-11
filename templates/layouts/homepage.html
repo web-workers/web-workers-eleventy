@@ -3,7 +3,7 @@
 <main class="homepage">
 {{ settings.logo | contents }}
 <div class="nav"><a href="/posts">Meetup Notes</a></div>
-{% assign meetupSlice = meetups | lookup: "Web Workers" | slice: "1"  %}
+{% assign meetupSlice = meetups | lookup: "Memphis Web Workers" | slice: "1"  %}
         {% for meetup in meetupSlice %}
             <h1 class="meetup-title"><a href="{{meetup.link }}" title="Link to {{ meetup.name }}">{{ meetup.name }}</a></h1>
             <div class="meetup-date">
@@ -12,7 +12,7 @@
                 <div class="date-day">{{ meetup.local_date | date: "%d" }}</div>                  
             </div>
             <div class="meetup-details">
-                <div class="time">{{ meetup.local_date | date: "%l:%M %p" }}</div>
+                <div class="time">{{ meetup.local_time | military }}</div>
                 <div class="venue">{{ meetup.venue.name }} | {{ meetup.venue.address_1 }}</div>
             </div>
             <div class="meetup-description">{{ meetup.description | safe }}</div>
