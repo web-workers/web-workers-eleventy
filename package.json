@@ -9,6 +9,7 @@
         "@11ty/eleventy": "^0.8.2",
         "browser-sync": "^2.26.3",
         "dotenv": "^6.2.0",
+        "eleventy-plugin-svg-contents": "^0.5.0",
         "gulp": "^4.0.0",
         "gulp-imagemin": "^5.0.3",
         "gulp-sass": "^4.0.2",

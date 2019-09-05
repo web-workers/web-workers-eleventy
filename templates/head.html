@@ -8,14 +8,14 @@
     <link rel="stylesheet" href="/style.css">
 </head>
 <body>
-{% comment %}
 
+{% if page.url != "/" %}
 <header class="header">
     <a href="/" class="logo{% if settings.logo == blank %} logo-image{% endif %}">{% if settings.logo == blank %}<img src="{{ settings.logo }}">{% else %}{{ settings.siteName }}{% endif %}</a>
     {% if settings.socials.0 %}
     <div class="socials">
         {% for social in settings.socials %}
-            <a class="social" href="{{ social.url }}">{{ social.image-file | contents }}</a>
+            <a class="social" href="{{ social.url }}">{{ social.image-file | svgContents }}</a>
         {% endfor %}
     </div>
     {% endif %}
@@ -27,4 +27,5 @@
         {% if about %}<p>{{ about }}</p>{% endif %}
     </div>
 </section> 
-{% endcomment %}
+
+{% endif %}
