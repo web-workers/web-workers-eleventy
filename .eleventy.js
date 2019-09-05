@@ -4,7 +4,7 @@ module.exports = function(config) {
     config.addPlugin(svgContents);
 
     config.addCollection('posts', collection => {
-      return collection.getFilteredByGlob('posts/*.md');
+      return collection.getFilteredByGlob('posts/*.md').reverse();
     });
     config.addCollection('sponsors', collection => {
       return collection.getFilteredByGlob('sponsors/*.md');
