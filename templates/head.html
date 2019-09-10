@@ -11,9 +11,15 @@
 
 {% if page.url != "/" %}
 <header class="header">
-    <a href="/" class="logo{% if settings.logo == blank %} logo-image{% endif %}">{% if settings.logo == blank %}<img src="{{ settings.logo }}">{% else %}{{ settings.siteName }}{% endif %}</a>
+    <a href="/" class="logo{% if settings.logo != blank %} logo-image{% endif %}">{% if settings.logo != blank %}<img src="{{ settings.logo }}">{% else %}{{ settings.siteName }}{% endif %}</a>
     {% if settings.socials.0 %}
+
+
+
     <div class="socials">
+        <nav class="site-nav">
+                <a href="/posts/">Meetup Notes</a>
+        </nav>
         {% for social in settings.socials %}
             <a class="social" href="{{ social.url }}">{{ social.image-file | svgContents }}</a>
         {% endfor %}
