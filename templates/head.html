@@ -1,11 +1,19 @@
+{% assign meetupSlice = meetups | lookup: "Memphis Web Workers" | slice: "1"  %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>{% if title %}{{ title }} - {% endif %}{{ settings.siteName }}</title>
+    <title>{{ meetupSlice.0.name }}</title>
     <link rel="stylesheet" href="/style.css">
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@memphisww" />
+    <meta name="twitter:title" content="{{ meetupSlice.0.name }}" />
+    <meta name="twitter:description" content="{{ meetupSlice.0.description | strip_html }}" />
+    <meta name="twitter:image" content="https://memphiswebworkers.com/images/social-default.png" />
 </head>
 <body>
 

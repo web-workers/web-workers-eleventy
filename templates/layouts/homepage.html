@@ -3,7 +3,6 @@
 <main class="homepage">
 {{ settings.logo | svgContents }}
 <div class="nav"><a href="/posts">Meetup Notes</a></div>
-{% assign meetupSlice = meetups | lookup: "Memphis Web Workers" | slice: "1"  %}
         {% for meetup in meetupSlice %}
             <h1 class="meetup-title"><a href="{{meetup.link }}" title="Link to {{ meetup.name }}">{{ meetup.name }}</a></h1>
             <div class="meetup-date">
